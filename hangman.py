@@ -54,6 +54,7 @@ def spela(datorns_val,max_gissningar):
         if användarens_bokstäver in datorns_val:
             print(f"Bra jobbat bokstaven {användarens_bokstäver} finns med i ordet")
             rätt_gissningar.add(användarens_bokstäver)
+            streck_sträng = "".join([bokstav if bokstav in rätt_gissningar else "-" for bokstav in datorns_val])
             if streck_sträng == datorns_val:
                 print(f"Grattis, du svarade rätt på ordet {streck_sträng}")
                 break
@@ -64,7 +65,7 @@ def spela(datorns_val,max_gissningar):
             antal_gissningar +=1
 
             seperate_line()
-        streck_sträng = "".join([bokstav if bokstav in rätt_gissningar else "-" for bokstav in datorns_val])
+        
         
         print("Nuvarande gissning:",streck_sträng)
         print("Din gissning på bokstäver:",fel_gissning)
